@@ -1,0 +1,221 @@
+@font-face {
+    font-family: 'Angst';
+    src: url("fonts/AngstVF.woff2") format("woff2"),
+         url("fonts/AngstVF.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+    
+body{
+    background-color: rgb(0, 0, 0);
+    font-family: 'Angst';
+}
+/* how the page wrapper will appear on mobile */
+.page-wrapper{
+    width: min(100% - 3rem, 80ch);
+    margin-inline: auto;
+}
+/* how the page wrapper appears on desktop */
+
+@media only screen and (min-width:800px){
+.page-wrapper{
+display: grid;
+grid-gap: 15px;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto;
+grid-template-areas: 
+    "a a"
+    "v h"
+    "b b ";
+}
+
+#history {
+grid-area: a;
+}
+
+#variations{
+grid-area: v;
+}
+
+#alphabet {
+grid-area: h;
+}
+#download{
+grid-area: b;
+padding:100px;
+}
+
+
+}
+/* CSS for the footer */
+footer{
+    background-color: transparent; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align:center;
+    padding: 10px;
+   
+}
+
+
+
+
+
+/* variable font animation */
+
+h2{
+    color: seashell;
+    font-variation-settings: "wght" 50, "srff" 80;
+    font-family: 'dm-serif-display-regular';
+}
+h3{
+    color: seashell;
+    font-family:'Angst'; 
+    text-align: center;
+    font-size: 5em;
+    animation: weightChange 7s infinite;
+}
+
+@keyframes weightChange {
+    0%, 100%{
+        font-variation-settings: "wght" 0, "srff" 0;
+    }
+    50%{font-variation-settings:  "wght" 100, "srff" 100;
+    }
+    
+}
+/* animations for the variation hover */
+.weight{
+    animation: weightVariations 5s infinite;
+    color: rgb(205, 204, 198);
+}
+@keyframes weightVariations {
+    0%, 100%{
+        font-variation-settings: "wght" 0, "srff" 0;
+    }
+    50%{font-variation-settings:  "wght" 100, "srff" 0;
+    }
+    
+}
+.serif {
+    animation: serifVariations 5s infinite;
+    color: rgb(205, 204, 198);
+}
+@keyframes serifVariations {
+    0%, 100%{
+        font-variation-settings: "wght" 0, "srff" 0;
+    }
+    50%{font-variation-settings:  "wght" 0, "srff" 100;
+    }
+}
+h4{ 
+    font-size: 40px;
+    color: rgb(205, 204, 198);
+    margin: 15px;
+}
+
+/* variable font that changes on hover */
+.variable-font{
+    font-family: 'Angst';
+    height:100vh;
+    font-size: 10em;
+    display:grid;
+    place-content: center;
+    margin: 0;
+    text-align: center;
+    font-variation-settings: "wght" 40, "wdth" 0, "XXXX" 1;
+    transition: 
+        font-variation-settings 3s;
+}
+
+.variable-font:hover{
+    font-weight:500 ;
+    height:100vh;
+    font-size: 7em;
+    display:grid;
+    
+}
+
+#variations p {
+    color: white;
+    font-size: 25px;
+    font-family: dm-serif-display-regular;
+}
+
+.section p {
+    color: white;
+}
+
+.dm-serif-display-regular {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .dm-serif-display-regular-italic {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+img[src="images/cropface.png"] {
+    width: 800px;
+
+}
+
+ /* Hover effect with animation */
+ .hover-effect {
+    position: relative;
+    color: #1900ff;
+    transition: color 0.3s;
+  }
+
+  .hover-effect::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff0000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .hover-effect:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  .drop-cap::first-letter {
+    float: left;
+    font-size: 3em;
+    line-height: -1;
+    padding-right: 0.1em;
+    color: red;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .hero h3 {
+    position: relative;
+    z-index: 1;
+  }
+  .hero img.sword {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+.download {
+    color: #1900ff;
+}
